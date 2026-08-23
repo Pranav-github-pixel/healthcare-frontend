@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* LIGHT MODE PALETTE - Clinical & Calm */
+    --background: 248 249 250;
+    --foreground: 17 24 39;
+    
+    --card: 255 255 255;
+    --card-foreground: 17 24 39;
+    
+    --primary: 15 118 110;
+    --primary-foreground: 255 255 255;
+    
+    --secondary: 253 224 71;
+    --secondary-foreground: 15 118 110;
+    
+    --accent: 224 242 254;
+    --accent-foreground: 3 105 161;
+    
+    --muted: 241 245 249;
+    --muted-foreground: 100 116 139;
+    
+    --border: 226 232 240;
+  }
+
+  .dark {
+    /* DARK MODE PALETTE - Premium & Deep */
+    --background: 11 17 32;
+    --foreground: 248 250 252;
+    
+    --card: 30 41 59;
+    --card-foreground: 248 250 252;
+    
+    --primary: 253 224 71;
+    --primary-foreground: 11 17 32;
+    
+    --secondary: 15 118 110;
+    --secondary-foreground: 255 255 255;
+    
+    --accent: 30 58 138;
+    --accent-foreground: 147 197 253;
+    
+    --muted: 30 41 59;
+    --muted-foreground: 148 163 184;
+    
+    --border: 51 65 85;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-mono antialiased selection:bg-secondary selection:text-secondary-foreground;
+  }
+  /* Remove serif font override completely, keep everything JetBrains Mono */
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-border/50 shadow-sm dark:shadow-soft-dark;
+  }
+  .glass-card {
+    @apply bg-white/60 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/20 dark:border-white/5 shadow-soft dark:shadow-soft-dark;
+  }
+}
+
+/* Custom Soothing Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
