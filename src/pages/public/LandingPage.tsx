@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Heart, Activity, Stethoscope, ShieldCheck, ArrowRight, CheckCircle2, Plus, Minus } from 'lucide-react'
+import { Heart, Stethoscope, ShieldCheck, ArrowRight, Plus, Minus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/ThemeToggle'
 
